@@ -43,34 +43,7 @@ const RegistrationForm = () => {
     <div style={{ textAlign: 'center', color: 'white', margin: '100px' }}>
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12} sm={4}>
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Username"
-              name="username"
-              onChange={formik.handleChange}
-              value={formik.values.username}
-              error={Boolean(formik.errors.username)}
-              helperText={formik.errors.username}
-              InputLabelProps={{ style: { color: 'white' } }}
-              inputProps={{ style: { color: 'grey' } }}
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': {
-                    borderColor: 'grey', 
-                  },
-                  '&:hover fieldset': {
-                    borderColor: 'white', 
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: 'white',
-                  },
-                },
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}>
             <TextField
               fullWidth
               margin="normal"
@@ -85,7 +58,7 @@ const RegistrationForm = () => {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: 'grey',
+                    borderColor: 'lightgrey',
                   },
                   '&:hover fieldset': {
                     borderColor: 'white',
@@ -97,6 +70,7 @@ const RegistrationForm = () => {
               }}
             />
           </Grid>
+           
           <Grid item xs={12} sm={4}>
             <TextField
               fullWidth
@@ -112,7 +86,7 @@ const RegistrationForm = () => {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: 'grey',
+                    borderColor: 'lightgrey',
                   },
                   '&:hover fieldset': {
                     borderColor: 'white',
@@ -124,6 +98,34 @@ const RegistrationForm = () => {
               }}
             />
           </Grid>
+          <Grid item xs={12} sm={4}>
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Username"
+              name="username"
+              onChange={formik.handleChange}
+              value={formik.values.username}
+              error={Boolean(formik.errors.username)}
+              helperText={formik.errors.username}
+              InputLabelProps={{ style: { color: 'white' } }}
+              inputProps={{ style: { color: 'grey' } }}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'lightgrey', 
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'white', 
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'white',
+                  },
+                },
+              }}
+            />
+          </Grid>
+        
           <Grid item xs={12} sm={4}>
             <TextField
               fullWidth
@@ -140,7 +142,7 @@ const RegistrationForm = () => {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: 'grey',
+                    borderColor: 'lightgrey',
                   },
                   '&:hover fieldset': {
                     borderColor: 'white',
@@ -168,7 +170,7 @@ const RegistrationForm = () => {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: 'grey',
+                    borderColor: 'lightgrey',
                   },
                   '&:hover fieldset': {
                     borderColor: 'white',
@@ -196,7 +198,7 @@ const RegistrationForm = () => {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: 'grey',
+                    borderColor: 'lightgrey',
                   },
                   '&:hover fieldset': {
                     borderColor: 'white',
@@ -215,6 +217,7 @@ const RegistrationForm = () => {
         variant="contained" 
         color="primary" 
         disabled={loading}
+        sx={{borderRadius:'50px'}}
       >
         {loading ? <CircularProgress size={24} color="inherit" /> : 'Register'}
       </Button>

@@ -53,7 +53,7 @@ const Step2 = () => {
       <Box display="flex" justifyContent="center" marginTop={4} gap={2}>
         <Button 
           variant="contained" 
-          color="primary"  
+        sx={{backgroundColor:'grey'}}  
           size="large" 
           style={{ padding: '10px 40px', borderRadius:'50px' }} 
           onClick={() => router.push('/step1')} 

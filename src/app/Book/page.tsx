@@ -116,7 +116,19 @@ const BookCall = () => {
     label="Select Date"
     value={selectedDate}
     onChange={(newValue) => setSelectedDate(newValue)}
-    slotProps={{ textField: { variant: 'outlined' } }} // Updated
+    slotProps={{ textField: { 
+      variant: 'outlined', 
+      sx: {
+        backgroundColor: 'white',
+        borderRadius: '5px',
+        width: '300px',
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.5)' },
+          '&:hover fieldset': { borderColor: 'white' },
+          '&.Mui-focused fieldset': { borderColor: 'white' },
+        }
+      } 
+    }}}
   />
 </Box>
 
