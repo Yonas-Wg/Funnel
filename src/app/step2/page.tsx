@@ -1,10 +1,7 @@
 "use client"; 
 
 import React from 'react';
-import TypographySection from '../components/TypographySection';
 import VideoSection from '../components/VideoSection';
-import RegistrationForm from '../components/RegistrationForm';
-import CallToActionButton from '../components/CallToActionButton';
 import { Typography, Button, Box } from '@mui/material';
 import { useRouter, usePathname } from 'next/navigation'; 
 

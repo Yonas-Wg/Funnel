@@ -1,7 +1,7 @@
 "use client"; // Add this at the top
 
 import React from 'react';
-import { Button, Box, Typography, Avatar } from '@mui/material';
+import {  Box, Typography, Avatar } from '@mui/material';
 
 // Sample avatar data
 const avatars = [

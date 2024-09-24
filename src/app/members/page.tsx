@@ -1,11 +1,10 @@
 "use client";
 
 import React from 'react';
-import { Card, CardMedia, CardContent, Typography, Button, Grid, Container, Box, TextField, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Paper, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import {  Typography, Button,  Container, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Paper, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { useRouter, usePathname } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
-import { CSVLink } from "react-csv"; 
 import jsPDF from "jspdf";          
 import autoTable from "jspdf-autotable";
 import * as XLSX from 'xlsx';       
@@ -17,11 +16,6 @@ const Members = () => {
   const currentPath = usePathname();
 
   const navItems = ["Step 1", "Step 2", "Step 3", "Trainings", "Funnels", "Members", "Leaderboard", "Account"];
-
-  const handleCopyLink = (link: string) => {
-    navigator.clipboard.writeText(link);
-    toast.success('Link copied to clipboard!', { position: "top-right", autoClose: 2000 });
-  };
 
   // Static data for the table
   const rows = [

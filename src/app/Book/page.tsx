@@ -6,7 +6,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker, TimePicker } from '@mui/x-date-pickers';
 import { useRouter } from 'next/navigation';
-import dayjs, { Dayjs } from 'dayjs'; 
+import { Dayjs } from 'dayjs'; 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -111,67 +111,37 @@ const BookCall = () => {
     alignItems="center"
     gap={4}
   >
-    <Box display="flex" flexDirection="column" alignItems="center">
-      <DatePicker
-        label="Select Date"
-        value={selectedDate}
-        onChange={(newValue) => setSelectedDate(newValue)} 
-        renderInput={(params) => (
-          <TextField 
-            {...params} 
-            variant="outlined" 
-            sx={{ 
-              backgroundColor: 'white', 
-              borderRadius: '5px', 
-              width: '300px',
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'rgba(255, 255, 255, 0.5)',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              },
-            }} 
-          />
-        )}
-      />
-    </Box>
-    <Box display="flex" flexDirection="column" alignItems="center">
-      <TimePicker
-        label="Select Time"
-        value={selectedTime}
-        onChange={(newValue) => setSelectedTime(newValue)} 
-        renderInput={(params) => (
-          <TextField 
-            {...params} 
-            variant="outlined" 
-            sx={{ 
-              backgroundColor: 'white', 
-              borderRadius: '5px', 
-              width: '300px',
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'rgba(255, 255, 255, 0.5)',
-                },
-                '&:hover fieldset': {
-                  borderColor: 'white',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'white',
-                },
-              },
-            }} 
-          />
-        )}
-      />
+   <Box display="flex" flexDirection="column" alignItems="center">
+  <DatePicker
+    label="Select Date"
+    value={selectedDate}
+    onChange={(newValue) => setSelectedDate(newValue)}
+    slotProps={{ textField: { variant: 'outlined' } }} // Updated
+  />
+</Box>
+
+<Box display="flex" flexDirection="column" alignItems="center">
+  <TimePicker
+    label="Select Time"
+    value={selectedTime}
+    onChange={(newValue) => setSelectedTime(newValue)}
+    slotProps={{ textField: { 
+      variant: 'outlined', 
+      sx: {
+        backgroundColor: 'white',
+        borderRadius: '5px',
+        width: '300px',
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.5)' },
+          '&:hover fieldset': { borderColor: 'white' },
+          '&.Mui-focused fieldset': { borderColor: 'white' },
+        }
+      } 
+    }}}
+  />
     </Box>
   </Box>
 </Box>
-
 
 
         <form onSubmit={formik.handleSubmit}>

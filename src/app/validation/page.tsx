@@ -3,7 +3,6 @@
 import React from 'react';
 import { Typography, Button, Box } from '@mui/material';
 import { useRouter, usePathname } from 'next/navigation';
-import { useState } from 'react';
 
 const Step3 = () => {
   const router = useRouter();
